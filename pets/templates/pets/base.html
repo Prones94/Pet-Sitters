@@ -1,0 +1,137 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{% block title %}Pet Home Page{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Home Page{% endblock %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'pets/img/favicon.png'}"
+    />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'pets/css/bootstrap.min.css'}" />
+    <link rel="stylesheet" href="{% static 'pets/css/owl.carousel.min.css'}" />
+    <link rel="stylesheet" href="{% static 'pets/css/magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'pets/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'pets/css/themify-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'pets/css/nice-select.css' %}" />
+    <link rel="stylesheet" href="{% static 'pets/css/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'pets/css/gijgo.css' %}" />
+    <link rel="stylesheet" href="{% static 'pets/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'pets/css/slicknav.css' %}" />
+    <link rel="stylesheet" href="{% static 'pets/css/style.css' %}" />
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+  </head>
+
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <header>
+      <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-xl-9 col-lg-9">
+                <div class="main-menu d-none d-lg-block">
+                  <nav>
+                    <ul id="navigation">
+                      <li><a href="{% url 'home' %}">Home</a></li>
+                      <li>
+                        <a href="{% url 'petlist' %}"
+                          >All Pets <i class="ti-angle-down"></i
+                        ></a>
+                        <ul class="submenu">
+                          <li><a href="new-pet.html">New Friend</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="{% url 'calendar' %}"
+                          >Calendar <i class="ti-angle-down"></i
+                        ></a>
+                        <ul class="submenu">
+                          <li>
+                            <a href="new-appt.html">Create Appointment</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="/accounts/login">Login</a></li>
+                      <li><a href="/accounts/logout">Logout</a></li>
+                      <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <!-- <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {% block content %} {% endblock %}
+
+    <!-- JS here -->
+    <script src="{% static 'pets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'pets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'pets/js/popper.min.js' %}"></script>
+    <script src="{% static 'pets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'pets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'pets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'pets/js/ajax-form.js' %}"></script>
+    <script src="{% static 'pets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'pets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'pets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'pets/js/scrollIt.js' %}"></script>
+    <script src="{% static 'pets/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'pets/js/wow.min.js' %}"></script>
+    <script src="{% static 'pets/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'pets/js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'pets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'pets/js/plugins.js' %}"></script>
+    <script src="{% static 'pets/js/gijgo.min.js' %}"></script>
+
+    <!--contact js-->
+    <script src="{% static 'pets/js/contact.js' %}"></script>
+    <script src="{% static 'pets/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'pets/js/jquery.form.js' %}"></script>
+    <script src="{% static 'pets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'pets/js/mail-script.js' %}"></script>
+
+    <script src="{% static 'pets/js/main.js' %}"></script>
+    <script>
+      $("#datepicker").datepicker({
+        iconsLibrary: "fontawesome",
+        disableDaysOfWeek: [0, 0],
+        //     icons: {
+        //      rightIcon: '<span class="fa fa-caret-down"></span>'
+        //  }
+      });
+      $("#datepicker2").datepicker({
+        iconsLibrary: "fontawesome",
+        icons: {
+          rightIcon: '<span class="fa fa-caret-down"></span>',
+        },
+      });
+      var timepicker = $("#timepicker").timepicker({
+        format: "HH.MM",
+      });
+    </script>
+  </body>
+</html>
