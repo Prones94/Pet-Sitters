@@ -47,7 +47,6 @@ class CalendarListView(ListView):
         return render(request, 'calendar/calendarlist.html',{
             'appointment': appointments.filter(
                 date_of_appointment__gte = timezone.now()
-
             ).order_by('date_of_appointment' 'date_of_appointment')
         })
 
