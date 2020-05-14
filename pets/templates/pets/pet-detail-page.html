@@ -1,4 +1,4 @@
-  {% extends 'pets/base.html' %}
+  {% extends 'base.html' %}
   {% load static %}
 
   {% block content %}
@@ -27,20 +27,26 @@
                      <h2 style="text-align: center;">{{ pet.name }} Details</h2>
                   </div>
                </div>
-                  <aside class="single_sidebar_widget post_category_widget">
-                     <!-- <h4 class="widget_title">{{ pet.name }} Details</h4> -->
-                     <ul class="list cat-list">
-                        <li>
-                           <p>{{ pet.species }}</p>
-                        </li>
-                        <li>
-                           <p>{{ pet.breed }}</p>
-                        </li>
-                        <li>
-                           <p>{{ pet.weight_in_pounds }} lbs</p>
-                        </li>
-                     </ul>
-                  </aside>
+               <aside class="single_sidebar_widget post_category_widget">
+                  <!-- <h4 class="widget_title">{{ pet.name }} Details</h4> -->
+                  <ul class="list cat-list">
+                     <li>
+                        <p> {{ pet.owner }}</p>
+                     </li>
+                     <li>
+                        <p>{{ pet.species }}</p>
+                     </li>
+                     <li>
+                        <p>{{ pet.breed }}</p>
+                     </li>
+                     <li>
+                        <p>{{ pet.weight_in_pounds }} lbs</p>
+                     </li>
+                  </ul>
+               </aside>
+               <div>
+                  <a href="{% url 'pets-list-page' %}">Back to List</a>
+               </div>
             </div>
          </div>
       </div>

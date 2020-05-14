@@ -52,25 +52,28 @@
                     <ul id="navigation">
                       <li><a href="{% url 'home' %}">Home</a></li>
                       <li>
-                        <a href="{% url 'petlist' %}"
+                        <a href="{% url 'pet-list-page' %}"
                           >All Pets <i class="ti-angle-down"></i
                         ></a>
                         <ul class="submenu">
-                          <li><a href="new-pet.html">New Friend</a></li>
+                          <li><a href="{% url 'pet-create-page' %}">New Friend</a></li>
                         </ul>
                       </li>
                       <li>
-                        <a href="{% url 'calendar' %}"
+                        <a href="{% url 'calendar-list-page' %}"
                           >Calendar <i class="ti-angle-down"></i
                         ></a>
                         <ul class="submenu">
                           <li>
-                            <a href="new-appt.html">Create Appointment</a>
+                            <a href="{% url 'create-appointment;'">Create Appointment</a>
                           </li>
                         </ul>
                       </li>
-                      <li><a href="/accounts/login">Login</a></li>
-                      <li><a href="/accounts/logout">Logout</a></li>
+                      <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                      <li><a href="{% url 'login' %}">Login</a></li>
+                      {% if request.user.is_authenticated %}
+                      <li><a href="{% url 'logout' %}">Logout</a></li>
+                      {% endif %}
                       <li><a href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                   </nav>

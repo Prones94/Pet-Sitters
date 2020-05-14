@@ -9,6 +9,9 @@
                 <div class="bradcam_text text-center">
                     <h3 style="text-align: center;">All appointments</h3>
                 </div>
+                <div class="bradcam_text">
+                    <a href="{% url 'appointment-create-page' %}">Create Appointment</a>
+                </div>
             </div>
         </div>
     </div>
@@ -27,11 +30,14 @@
             <div class="table-row">
                 <div class="serial">{{ appointment.id}}</div>
                 <div class="visit">{{ appointment.appointment_name }}</div>
-                <div class="visit">{{ appointment.pet }}</div>
+                <div class="visit"><a href="{% url 'pet-detail-page' appointment.pet.id %}"></a>{{ appointment.pet }}</div>
                 <div class="visit">{{ appointment.date_of_appointment }}</div>
                 <div class="visit">{{ appointment.duration_minutes }} minutes</div>
             </div>
             {% endfor %}
+            <div>
+
+            </div>
         </div>
     </div>
 </div>

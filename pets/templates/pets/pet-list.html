@@ -1,4 +1,4 @@
-{% extends 'pets/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
@@ -23,9 +23,9 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="single_service">
-                        <a href="{% url 'petlist' pet.id %}">
+                        <a href="{% url 'pet-detail-page' pet.id %}">
                          <div class="service_content text-center">
-                            <h3><a href="{% url 'petlist' pet.id %}">{{ pet.name }}</a></h3>
+                            <h3><a href="{% url 'pet-detail-page' pet.id %}">{{ pet.name }}</a></h3>
                          </div>
                         </a>
                     </div>

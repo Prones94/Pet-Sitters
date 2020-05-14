@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="bradcam_text text-center">
+                <div class="bradcam_text" style="text-align:center;">
                     <h3>Log In</h3>
                 </div>
             </div>
@@ -22,7 +22,7 @@
             {% if form.errors %}
             <h3>Your username and password didn't work. Try again</h3>
             {% endif %}
-            <form method="post" action="{% url 'login' %}">
+            <form method="post" action="{% url 'login' %}" style="text-align: center ;">
                 {% csrf_token %}
                 <div class="mt-10" style="width: 40%">
                     <label for="id_username" >
@@ -33,13 +33,13 @@
                 </div>
                 <div class="mt-10" style="width: 40%">
                     <label for="id_password">
-                        <input type="text" name="password" id="id_password" placeholder="Password"
+                        <input type="password" name="password" id="id_password" placeholder="Password"
                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" required
                             class="single-input">
                     </label>
                 </div>
                 <div class="mt-10"">
-                    <button type="submit" class="genric-btn danger-border circle arrow">Submit</button>
+                    <button type="submit" class="genric-btn danger-border circle arrow" value="login">Submit</button>
                 </div>
             </form>
         </div>
